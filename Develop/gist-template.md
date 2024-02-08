@@ -1,6 +1,5 @@
-# Title (replace with your title)
+# Regular Expression Tutorial by Danielle Uweri
 
-Regular Expression Tutorial by Danielle Uweri
 
 ## Summary
 
