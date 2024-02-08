@@ -29,7 +29,8 @@ Two types of anchors:
 Start Anchor ^: This asserts that the pattern must match the start of the string.
 End Anchor $: This asserts that the pattern must match the end of the string.
 
-Example One: The regex ^hello$ matches only the string "hello" and nothing else. It won't match "hello world" or "say hello" because the pattern is not at the start or end of the string, respectively.
+##### Example One: 
+The regex ^hello$ matches only the string "hello" and nothing else. It won't match "hello world" or "say hello" because the pattern is not at the start or end of the string, respectively.
 Example Two: The regex ^hello matches any string where "hello" is at the start of the string. It will match "hello" in "hello world", but it will not match "hello" in "world hello" because the string does not start with "hello".
 Example Three: The regular expression hello$ matches any string where "hello" is at the end of the string. It will match "hello" in "world hello" but it will not match "hello" in "hello world" because the string does not end with "hello".
 
@@ -45,7 +46,8 @@ Similarly, the + quantifier is used after the pattern `[\da-z\.-]` in the second
 
 The `{2,6}` quantifier is used after the character class `[a-z\.]` in the third capturing group `([a-z\.]{2,6})`. This group matches a sequence of 2 to 6 lowercase letters or dots. This means that the email address must end with a two to six letter top-level domain, such as .com, .edu, or .co.uk.
 
-Example: Quantifiers in regex describe the number of times a pattern should match. They are inserted after a character, character class, or group to establish the minimum and maximum repetitions of the previous pattern.
+##### Example: 
+Quantifiers in regex describe the number of times a pattern should match. They are inserted after a character, character class, or group to establish the minimum and maximum repetitions of the previous pattern.
 
 Given the regex `/^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/`:
 
@@ -70,8 +72,8 @@ Character classes, also known as character sets, are shorter and more succinct r
 
 The highlighted email regex employs the principal character class: \d and.. Square brackets specify character sets, such as `[a-z]`, `[0-9]`, and `[.-]`. These sets represent numerous characters, with a single character matching from the provided range.
 
+##### Example: 
 Consider the following: `/[a-zA-Z0-9]/`.
-
 
 This regex pattern matches a single alphanumeric character, which can be capital, lowercase, or digits. The character class \d represents a digit, whereas `[a-z]` and `[A-Z]` are character sets that represent lowercase and capital letters, respectively. Combining these character sets within square brackets results in a pattern that matches any single alphanumeric character.
 
@@ -84,7 +86,8 @@ Grouping structures in regular expressions (regex) are used to combine one or mo
 * Creating a backreference for the previously matched group.
 * Using alternation on a collection of characters
 
-Our Email regex example : `/^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/` contains 3 grouping/capturing constructs which capture 3 different parts of the email address such as the local part, domain and the top-level domain.
+##### Our Email regex example :
+`/^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/` contains 3 grouping/capturing constructs which capture 3 different parts of the email address such as the local part, domain and the top-level domain.
 
 #### The Local Part
 
@@ -95,7 +98,8 @@ Our Email regex example : `/^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/` co
 * Underscores: _
 * Dots: .
 * Hyphens: -
-Example: The email address: danielle_uweri.123@example.com
+##### Example: 
+The email address: danielle_uweri.123@example.com
 
 The Local-Part of the email address is danielle_uweri.123. It matches the regex ([a-z0-9_\.-]+) for the following reasons:
 
@@ -113,7 +117,8 @@ Secondly, `([\da-z\.-]+)` matches the Domain name. The group represents the doma
 * Lowercase letters: a-z
 * Dots: .
 * Hyphens: -
-Example: The email address: danielle.uweri@sub-domain123.example.com
+##### Example: 
+The email address: danielle.uweri@sub-domain123.example.com
 
 It matches the regex ([\da-z\.-]+) for the following reasons:
 
@@ -129,7 +134,8 @@ Thirdly,`([a-z\.]{2,6})` matches the Top-Level Domain. The group represents the 
 
 * Lowercase letters: a-z
 * Dots: .
-Example: The email address: danielle_uweri.123@example.com
+##### Example: 
+The email address: danielle_uweri.123@example.com
 
 The Top-Level Domain of the email address is com. It matches the regex ([a-z\.]{2,6}) for the following reasons:
 
@@ -151,7 +157,8 @@ Here's the breakdown of this expression:
 * _: Matches underscore character.
 * \.: Matches literal period (dot) character. The backslash is used to escape the dot since it has a special meaning in regex.
 * -: Matces the hyphen character.
-Example: Consider the following email address: danielle_1402-@stu-dent2024.com
+##### Example: 
+Consider the following email address: danielle_1402-@stu-dent2024.com
 
 The local part, of the username, is danielle_1402-.
 
@@ -174,7 +181,8 @@ Here's the breakdown of this expression:
 * a-z: Matches lowercase letter from a to z.
 * \.: Matches the literal period (dot) character.
 * -: Matches hyphen character.
-Example: Consider the following email address: danielle_1402-@stu-dent2024.com
+##### Example: 
+Consider the following email address: danielle_1402-@stu-dent2024.com
 
 The domain part of the email address is student2024.com.
 
@@ -197,7 +205,8 @@ Here's the breakdown of this expression:
 * a-z: Matches lowercase letter from a to z.
 * \.: Matches literal period (dot) character.
 * {2,6}: Matches quantifier that specifies the number of times the preceding expression (i.e., [a-z\.]) must be matched, which is between 2 and 6 times, inclusive.
-Example: Consider the following email address: danielle_1402-@bstu-dent2024.examp.le
+##### Example: 
+Consider the following email address: danielle_1402-@bstu-dent2024.examp.le
 
 The top-level domain part of the email address is examp.le.
 
