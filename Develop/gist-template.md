@@ -3,7 +3,7 @@
 
 ## Summary
 
-RegEx or Regular Expressions is a sequence of characters that forms a search pattern and can be used to check if a string contains the specified search pattern. In this Regex Tutorial, you will learn how to validate the featured email address using regualr expression: /^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/. 
+RegEx or Regular Expressions is a sequence of characters that forms a search pattern and can be used to check if a string contains the specified search pattern. In this Regex Tutorial, you will learn how to validate the featured email address using regualr expression: `/^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/`. 
 The tutorial breaks down and explains each component of the regex, making the validation process easier to grasp. After finishing this tutorial, you will have a better understanding of how the regex works to validate and confirm the input of a legitimate email address.
 
 ## Table of Contents
@@ -17,17 +17,17 @@ The tutorial breaks down and explains each component of the regex, making the va
 
 ## Regex Components
 
-Regular Expressions are literal which consists of a pattern enclosed between slashes as follows: /^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/. If we examime the "Matching an email address" regex, you will see that this is true.
+Regular Expressions are literal which consists of a pattern enclosed between slashes as follows: `/^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/`. If we examime the "Matching an email address" regex, you will see that this is true.
 
 ### Anchors
 
-Regular expressions are effective tools for identifying patterns in text. Anchors are special characters in regular expressions that define the pattern's position within the input string. In email validation, such as the regex included in this tutorial: /^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/, it is critical to guarantee that the full input string matches the provided pattern, rather than just a part of it.
+Regular expressions are effective tools for identifying patterns in text. Anchors are special characters in regular expressions that define the pattern's position within the input string. In email validation, such as the regex included in this tutorial: `/^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/`, it is critical to guarantee that the full input string matches the provided pattern, rather than just a part of it.
 
 The characters ^ and $ are both considered to be anchors.
 
 Two types of anchors:
-Start Anchor ^: This asserts that the pattern must match the start of the string.
-End Anchor $: This asserts that the pattern must match the end of the string.
+* Start Anchor ^: This asserts that the pattern must match the start of the string.
+* End Anchor $: This asserts that the pattern must match the end of the string.
 
 ##### Example One: 
 The regex ^hello$ matches only the string "hello" and nothing else. It won't match "hello world" or "say hello" because the pattern is not at the start or end of the string, respectively.
@@ -101,13 +101,13 @@ Grouping structures in regular expressions (regex) are used to combine one or mo
 ##### Example: 
 The email address: danielle_uweri.123@example.com
 
-The Local-Part of the email address is danielle_uweri.123. It matches the regex ([a-z0-9_\.-]+) for the following reasons:
+The Local-Part of the email address is danielle_uweri.123. It matches the regex `([a-z0-9_\.-]+)` for the following reasons:
 
 It contains lowercase letters: d, a, n, i, e, l, u, w, and r
 It contains numbers: 1, 2, and 3
 It contains an underscore: _
 It contains a dot: .
-This Local-Part follows a valid format and is in compliance with the regex pattern provided. The regex pattern ([a-z0-9_\.-]+) effectively captures the username portion of the email address as seen above, by allowing a combination of lowercase letters, numbers, underscores, dots, and hyphens.
+This Local-Part follows a valid format and is in compliance with the regex pattern provided. The regex pattern `([a-z0-9_\.-]+)` effectively captures the username portion of the email address as seen above, by allowing a combination of lowercase letters, numbers, underscores, dots, and hyphens.
 
 #### Domain 
 
@@ -120,7 +120,7 @@ Secondly, `([\da-z\.-]+)` matches the Domain name. The group represents the doma
 ##### Example: 
 The email address: danielle.uweri@sub-domain123.example.com
 
-It matches the regex ([\da-z\.-]+) for the following reasons:
+It matches the regex `([\da-z\.-]+)` for the following reasons:
 
 It contains lowercase letters: s, u, b, d, o, m, a, i, n, e, x, a, m, p, l, and e
 It contains numbers: 1, 2, and 3
@@ -137,7 +137,7 @@ Thirdly,`([a-z\.]{2,6})` matches the Top-Level Domain. The group represents the 
 ##### Example: 
 The email address: danielle_uweri.123@example.com
 
-The Top-Level Domain of the email address is com. It matches the regex ([a-z\.]{2,6}) for the following reasons:
+The Top-Level Domain of the email address is com. It matches the regex `([a-z\.]{2,6})` for the following reasons:
 
 * It contains lowercase letters: c, o, and m
 * It has a length of 3 characters, which falls within the valid range of 2 to 6 characters.
@@ -146,7 +146,7 @@ The Top-Level Domain of the email address is com. It matches the regex ([a-z\.]{
 ### Bracket Expressions
 
 Anthying within the Square brackets ([...]) represents a range of characters that we want to match and will become a part of the allowed set. Not only are they known as bracket expressions, but also positive character group because they outline the characters we want to match. 
-In our regex featured in this tutorial: /^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/ there are (3) main bracket expressions:
+In our regex featured in this tutorial: `/^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/` there are (3) main bracket expressions:
 
 ### 1st Bracket Expression:
 
@@ -162,18 +162,18 @@ Consider the following email address: danielle_1402-@stu-dent2024.com
 
 The local part, of the username, is danielle_1402-.
 
-Now let's break it down according to the bracket expression [a-z0-9_\.-]:
+Now let's break it down according to the bracket expression `[a-z0-9_\.-]`:
 
 * danielle contains lowercase letters d, a, n, i, e, l, l and e, matching the a-z part of the expression.
 * _ is an underscore character, matching the _ part of the expression.
 * 1402 contains digits 1, 4, 0, and 2, matching the 0-9 part of the expression.
 * - is a hyphen character, matching the - part of the expression.
 * . is a literal period (dot) character, matching the \. part of the expression.
-In the example, the bracket expression [a-z0-9_\.-] successfully matches the local part thomas_1234- of the email address.
+In the example, the bracket expression `[a-z0-9_\.-]` successfully matches the local part thomas_1234- of the email address.
 
 ### 2nd Bracket Expression:
 
-The bracket expression [\da-z\.-] matches any single character in the range 0-9, a-z, or one of the characters ., or -. Thus the expression is used to match the Grouping Constructs: domain part of the email address.
+The bracket expression `[\da-z\.-]` matches any single character in the range 0-9, a-z, or one of the characters ., or -. Thus the expression is used to match the Grouping Constructs: domain part of the email address.
 
 Here's the breakdown of this expression:
 
@@ -186,7 +186,7 @@ Consider the following email address: danielle_1402-@stu-dent2024.com
 
 The domain part of the email address is student2024.com.
 
-Now let's break it down according to the bracket expression [\da-z\.-]
+Now let's break it down according to the bracket expression `[\da-z\.-]`
 
 * stu contains lowercase letters s, t, and u, matching the a-z part of the expression.
 * - is a hyphen character, matching the - part of the expression.-
@@ -194,11 +194,11 @@ Now let's break it down according to the bracket expression [\da-z\.-]
 * 2024 contains digits 2, 0, 2, and 4, matching the \d part of the expression.
 * \. is a literal period (dot) character, matching the \. part of the expression.
 * com contains lowercase letters c, o, and m, matching the a-z part of the expression.
-In this example, the bracket expression [\da-z\.-] successfully matches the domain part stu-dent2024.com of the email address.
+In this example, the bracket expression `[\da-z\.-]` successfully matches the domain part stu-dent2024.com of the email address.
 
 ### 3rd Bracket Expression:
 
-The bracket expression [a-z\.]{2,6} matches any single character in the range a-z or the literal period (dot) character. The expression is then followed by a quantifier {2,6}, which specifies that the matched characters must occur between 2 and 6 times, inclusive. Thus used to match the Grouping Constructs: top-level domain of the email address.
+The bracket expression `[a-z\.]{2,6}` matches any single character in the range a-z or the literal period (dot) character. The expression is then followed by a quantifier {2,6}, which specifies that the matched characters must occur between 2 and 6 times, inclusive. Thus used to match the Grouping Constructs: top-level domain of the email address.
 
 Here's the breakdown of this expression:
 
@@ -210,7 +210,7 @@ Consider the following email address: danielle_1402-@bstu-dent2024.examp.le
 
 The top-level domain part of the email address is examp.le.
 
-Now let's break it down according to the bracket expression [a-z\.]{2,6}:
+Now let's break it down according to the bracket expression `[a-z\.]{2,6}`:
 
 * examp.le contains lowercase letters a-z (specifically, e, x, a, m, and p), matching the a-z part of the expression.
 * \. is a literal period (dot) character, matching the \. part of the expression.
