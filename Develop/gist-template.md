@@ -220,7 +220,7 @@ In the example, the bracket expression [a-z\.]{2,6} successfully matches the top
 
 ## Author
 
-Github: 
-Deployed GitHub-Gist Link: 
-GitHub Repository: 
+Github: duweri
+Deployed GitHub-Gist Link: https://gist.github.com/duweri/c34aec199951846702b9f3956b6b9bf6
+GitHub Repository: https://github.com/duweri/challenge-17
 
